@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pruebapragma/presentation/screens/cat_screen.dart';
+import 'core/routes/app_router.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -11,12 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Cat App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const CatScreen(),
+      routerConfig: appRouter,
     );
   }
 }

@@ -8,7 +8,38 @@ final catRepositoryProvider = Provider<CatRepository>(
       (ref) => CatRepository(ref.read(apiClientProvider)),
 );
 
-final catsProvider = FutureProvider<List<CatModel>>((ref) async {
+// Paginación automática
+class CatNotifier extends StateNotifier<List<CatModel>> {
+  final CatRepository repository;
+  int _page = 0;
+  bool _isLoading = false;
+
+  CatNotifier(this.repository) : super([]);
+
+  Future<void> fetchCats() async {
+    if (_isLoading) return;
+
+    _isLoading = true;
+
+    try {
+      final cats = await repository.getCats(page: _page);
+      state = [...state, ...cats];
+      _page++;
+    } catch (e) {
+      print("Error: $e");
+    } finally {
+      _isLoading = false;
+    }
+  }
+}
+
+final catPaginationProvider = StateNotifierProvider<CatNotifier, List<CatModel>>((ref) {
+  final repository = ref.read(catRepositoryProvider);
+  return CatNotifier(repository)..fetchCats();
+});
+
+
+/*final catsProvider = FutureProvider<List<CatModel>>((ref) async {
   final repository = ref.read(catRepositoryProvider);
   return await repository.getCats();
-});
+});*/
