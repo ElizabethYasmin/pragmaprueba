@@ -4,7 +4,6 @@ class CatModel {
   final String origin;
   final String temperament;
   final String description;
-
   final int intelligence;
   final int adaptability;
   final String life_span;
@@ -15,12 +14,9 @@ class CatModel {
     required this.origin,
     required this.temperament,
     required this.description,
-
     required this.intelligence,
     required this.adaptability,
     required this.life_span,
-
-
   });
 
   factory CatModel.fromJson(Map<String, dynamic> json) {
@@ -33,7 +29,6 @@ class CatModel {
       intelligence: json['intelligence'] ?? 'No tiene inteligencia',
       adaptability: json['adaptability'] ?? 'No tiene adaptabilidad',
       life_span: json['life_span'] ?? 'No tiene tiempo de vida',
-
     );
   }
 }

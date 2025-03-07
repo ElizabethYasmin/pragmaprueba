@@ -8,7 +8,6 @@ final catRepositoryProvider = Provider<CatRepository>(
       (ref) => CatRepository(ref.read(apiClientProvider)),
 );
 
-// Paginación automática
 class CatNotifier extends StateNotifier<List<CatModel>> {
   final CatRepository repository;
   int _page = 0;
@@ -38,8 +37,3 @@ final catPaginationProvider = StateNotifierProvider<CatNotifier, List<CatModel>>
   return CatNotifier(repository)..fetchCats();
 });
 
-
-/*final catsProvider = FutureProvider<List<CatModel>>((ref) async {
-  final repository = ref.read(catRepositoryProvider);
-  return await repository.getCats();
-});*/

@@ -11,12 +11,11 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (_, __) => const SplashScreen()),
     GoRoute(path: '/landing', builder: (_, __) => const CatScreen()),
-    //GoRoute(path: '/landing', builder: (_, __) => const LandingScreen()),
     GoRoute(path: '/detail', builder: (_, __) => const DetailScreen()),
     GoRoute(
       path: '/detail-scroll',
       builder: (context, state) {
-        final cat = state.extra as CatModel; // Aquí casteas el objeto
+        final cat = state.extra as CatModel;
         return DetailScrollScreen(cat: cat);
       },
     ),

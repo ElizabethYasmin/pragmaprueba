@@ -23,7 +23,6 @@ class DetailScrollScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          // Imagen de cabecera
           ClipRRect(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(30),
@@ -60,9 +59,7 @@ class DetailScrollScreen extends ConsumerWidget {
                     ),
                     textAlign: TextAlign.justify,
                   ),
-
                   const SizedBox(height: 8),
-
                   Text(
                     '🌍 Origen:',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -70,7 +67,6 @@ class DetailScrollScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-
                   Text(
                     cat.origin,
                     style: const TextStyle(
@@ -78,11 +74,7 @@ class DetailScrollScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-
-
-
                   const SizedBox(height: 8),
-
                   Text(
                     '🧠 Inteligencia:',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -90,7 +82,6 @@ class DetailScrollScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-
                   Text(
                     cat.intelligence.toString(),
                     style: const TextStyle(
@@ -98,10 +89,7 @@ class DetailScrollScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-
-
                   const SizedBox(height: 8),
-
                   Text(
                     '⚙️ Adaptabilidad:',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -135,7 +123,6 @@ class DetailScrollScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -144,7 +131,6 @@ class DetailScrollScreen extends ConsumerWidget {
       ),
     );
   }
-
   Widget _infoText(String title, String value) {
     return RichText(
       text: TextSpan(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pruebapragma/core/theme/theme.dart'; // Importa tu tema
+import 'package:pruebapragma/core/theme/theme.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
